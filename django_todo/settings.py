@@ -31,7 +31,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', '')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = development
 
-ALLOWED_HOSTS = ['https://my-todo-list-c14ba272f6b8.herokuapp.com/']
+ALLOWED_HOSTS = ['my-todo-list-c14ba272f6b8.herokuapp.com']
 
 
 # Application definition
@@ -99,8 +99,6 @@ else:
     DATABASES = {
         'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
     }
-
-
 
 
 # Password validation
