@@ -26,7 +26,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 
-SECRET_KEY = os.environ.get('SECRET_KEY', '')
+#SECRET_KEY = os.environ.get('SECRET_KEY', '')
+SECRET_KEY = 'x34$s(0j@z2a3rz_9bil3%6v($#k!-#7p#f_(ox=8i&dk78t=$'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = development
@@ -88,17 +89,21 @@ WSGI_APPLICATION = 'django_todo.wsgi.application'
 # }
 
 
-if development:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': BASE_DIR / 'db.sqlite3',
-        }
-    }
-else:
-    DATABASES = {
-        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
-    }
+# if development:
+#     DATABASES = {
+#         'default': {
+#             'ENGINE': 'django.db.backends.sqlite3',
+#             'NAME': BASE_DIR / 'db.sqlite3',
+#         }
+#     }
+# else:
+#     DATABASES = {
+#         'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+#     }
+
+DATABASES = {
+    'default': dj_database_url.parse('postgres://ocwgaulj:sBRXCseibS5kJLZeMQQZOJqbRN0VwmPD@flora.db.elephantsql.com/ocwgaulj')
+}
 
 
 # Password validation
